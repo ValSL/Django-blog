@@ -8,8 +8,20 @@
 
 {% block content %}
     <h1 class="mb-5">Posts:</h1>
-    {% for name in names %}
-        <p>{{ name }}</p>
+    {% for post in posts %}
+
+        <div class="card mb-5">
+            <div class="card-header">
+                {{ post.date_pub }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.body|truncatewords:15 }}</p><!-- truncateword  это фильтр Django обрезает до 15 слов -->
+                <a href="{% url 'post_detail_url' slug=post.slug %}" class="btn btn-primary">Read</a>
+            </div>
+        </div>
+
+
     {% endfor %}
 {% endblock %}
 
