@@ -1,0 +1,29 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+    Edit post {{ post.title|title }} - {{ block.super }} <!-- |title фильтр для большой буквы-->
+{% endblock %}
+
+{% block content %}
+    <form action="{{ post.get_update_url }}" method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="form-group">
+                
+                {% if field.errors %}
+                    <div class="alert-danger">
+                        {{ field.errors }}
+                    </div>
+                
+                {% endif %}
+            
+                {{ field.label }}
+                {{ field }}
+            </div>
+
+        {% endfor %}
+
+        <button type="submit" class="btn btn-success">Update Post</button>
+    </form>
+{% endblock %}

@@ -3,13 +3,13 @@ from .models import Tag, Post
 from django.core.exceptions import ValidationError
 
 
-class TagForm(forms.ModelForm):
+class TagForm(forms.ModelForm): # ModelForm связывает между собой модель и класс формы
     # title = forms.CharField(max_length=50)  # CharField соотв. input
     # slug = forms.CharField(max_length=50)
     #
     # title.widget.attrs.update({'class': 'form-control'})
     # slug.widget.attrs.update({'class': 'form-control'})
-    class Meta:
+    class Meta: # Класс для связыванимя модели и формы
         model = Tag
         fields = ['title', 'slug']
 
@@ -26,7 +26,7 @@ class TagForm(forms.ModelForm):
             raise ValidationError(f'Slug must be unique. We have "{new_slug}" slug already')
         return new_slug
 
-    # def save(self):
+    # def save(self): # У ModelForm есть свой метод save
     #     new_tag = Tag.objects.create(title=self.cleaned_data['title'], slug=self.cleaned_data['slug'])
     #     return new_tag
 
