@@ -17,6 +17,20 @@ def posts_list(request):
 #     post = Post.objects.get(slug__iexact=slug)
 #     return render(request, 'blog/post_detail.html', context={'post': post})
 
+class PostCreate(View):
+    def get(self, request):
+        form = PostForm()
+        return render(request, 'blog/post_create_form.html', context={'form': form})
+
+    def post(self, request):
+        bound_form = PostForm(request.POST)
+        if bound_form.is_valid():
+            new_post = bound_form.save()
+            return redirect(new_post)
+        return render(request, 'blog/post_create_form.html', context={'form': bound_form})
+
+
+
 class PostDetail(ObjectDetailMixin, View):
     model = Post
     template = 'blog/post_detail.html'
@@ -31,17 +45,6 @@ class PostDetail(ObjectDetailMixin, View):
 #     return render(request, 'blog/tag_detail.html', context={'tag': tag})
 #
 
-class PostCreate(View):
-    def get(self, request):
-        form = PostForm()
-        return render(request, 'blog/post_create_form.html', context={'form': form})
-
-    def post(self, request):
-        bound_form = PostForm(request.POST)
-        if bound_form.is_valid():
-            new_post = bound_form.save()
-            return  redirect(new_post)
-        return render(request, 'blog/post_create_form.html', context={'form': bound_form})
 
 
 class TagDetail(ObjectDetailMixin, View):
