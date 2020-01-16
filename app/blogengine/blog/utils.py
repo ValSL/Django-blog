@@ -11,7 +11,7 @@ class ObjectDetailMixin:
     def get(self, request, slug):
         # tag = Tag.objects.get(slug__iexact=slug)
         obj = get_object_or_404(self.model, slug__iexact=slug)
-        return render(request, self.template, context={self.model.__name__.lower(): obj})
+        return render(request, self.template, context={self.model.__name__.lower(): obj, 'admin_object': obj, 'detail': True})
 
 
 class ObjectCreateMixin:
@@ -31,7 +31,7 @@ class ObjectCreateMixin:
         return render(request, self.template, context={'form': bound_form})
 
 
-class ObjectUpdateMixin():
+class ObjectUpdateMixin:
     model = None
     model_form = None
     template = None
@@ -49,10 +49,10 @@ class ObjectUpdateMixin():
         if bound_form.is_valid():
             new_obj = bound_form.save()
             return redirect(new_obj)
-        return render(request, self.template, context={'form': bound_form, self.model.__name__lower(): obj})
+        return render(request, self.template, context={'form': bound_form, self.model.__name__.lower(): obj})
 
 
-class ObjectDeleteMixin():
+class ObjectDeleteMixin:
     model = None
     template = None
     redirect_url = None
