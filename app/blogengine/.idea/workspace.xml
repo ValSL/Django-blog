@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b27d36b-cf0e-4000-8db4-46b5bb3638ec" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/base_blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/base_blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogengine/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogengine/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogengine/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogengine/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogengine/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogengine/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
@@ -134,12 +129,26 @@
       <option name="presentableId" value="Default" />
       <updated>1578673442855</updated>
       <workItem from="1579082345137" duration="12293000" />
-      <workItem from="1579175250361" duration="5583000" />
+      <workItem from="1579175250361" duration="5852000" />
+      <workItem from="1579254131075" duration="2819000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state width="1878" height="307" key="GridCell.Tab.0.bottom" timestamp="1579103900848">
