@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404
 from .utils import *
 from .forms import TagForm, PostForm
 from django.shortcuts import redirect
+from django.core.paginator import Paginator
 
 # Используется миксин т.к. мы использовали ClassBasedViews (классы в качестве вьюх), а для вункций есть декоратор @loginrequired
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -14,7 +15,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 def posts_list(request):
     posts = Post.objects.all()
-    return render(request, 'blog/index.html', context={'posts': posts})
+
+    paginator = Paginator(posts, 1)
+
+    page_number = request.GET.get('page', 1)
+    page = paginator.get_page(page_number)
+    return render(request, 'blog/index.html', context={'page_object': page})
 
 
 # def post_detail(request, slug):

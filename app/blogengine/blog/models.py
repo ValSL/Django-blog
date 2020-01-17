@@ -3,14 +3,14 @@ from django.shortcuts import reverse
 
 from django.utils.text import slugify
 from time import time
+
+
 # Create your models here.
 
 
 def gen_slug(s):
     new_slug = slugify(s, allow_unicode=True)
-    return new_slug+'-'+str(int(time()))
-
-
+    return new_slug + '-' + str(int(time()))
 
 
 class Post(models.Model):
@@ -20,9 +20,9 @@ class Post(models.Model):
     tags = models.ManyToManyField('Tag', blank=True, related_name='posts')
     date_pub = models.DateTimeField(auto_now_add=True)  # auto_now_add=True значит будт заполнятся при сохранении в БД
 
-# Метод нужен для того чтобы не запоминать для какой модели какие входные данные, метод является Django соглашением
-# нужно указывать в html шаблоне, название метода это соглашение в Django
-# Метод возвращает ссылку на конкретный объект
+    # Метод нужен для того чтобы не запоминать для какой модели какие входные данные, метод является Django соглашением
+    # нужно указывать в html шаблоне, название метода это соглашение в Django
+    # Метод возвращает ссылку на конкретный объект
     def get_absolute_url(self):
         return reverse('post_detail_url', kwargs={'slug': self.slug})
 
@@ -41,6 +41,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:  # В данном примере в подклассе мета мы указали сортировку по полю date_pub
+        ordering = ['-date_pub']
+
 
 class Tag(models.Model):
     title = models.CharField(max_length=50)
@@ -57,3 +60,6 @@ class Tag(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+    class Meta:
+        ordering = ['title']
