@@ -12,9 +12,20 @@ from django.core.paginator import Paginator
 # Используется миксин т.к. мы использовали ClassBasedViews (классы в качестве вьюх), а для вункций есть декоратор @loginrequired
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from django.db.models import Q
+
 
 def posts_list(request):
-    posts = Post.objects.all()
+    search_query = request.GET.get('search', '')
+
+    # if search_query:
+    #     posts = Post.objects.filter(title__icontains=search_query,
+    #                                 body__icontains=search_query)  # В данном случае запятая работает как оператор and и поиск работает не корректно
+    if search_query:
+        posts = Post.objects.filter(Q(title__icontains=search_query) |
+                                    Q(body__icontains=search_query))
+    else:
+        posts = Post.objects.all()
 
     paginator = Paginator(posts, 1)
 
@@ -31,7 +42,7 @@ class PostCreate(LoginRequiredMixin, ObjectCreateMixin, View):
     model_form = PostForm
     template = 'blog/post_create_form.html'
 
-    raise_exception = True # поле класса LoginRequiredMixin,
+    raise_exception = True  # поле класса LoginRequiredMixin,
     # def get(self, request):
     #     form = PostForm()
     #     return render(request, 'blog/post_create_form.html', context={'form': form})
