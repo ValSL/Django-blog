@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1b27d36b-cf0e-4000-8db4-46b5bb3638ec" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +155,14 @@
       <workItem from="1579082345137" duration="12293000" />
       <workItem from="1579175250361" duration="5852000" />
       <workItem from="1579254131075" duration="14578000" />
-      <workItem from="1579345455709" duration="3137000" />
+      <workItem from="1579345455709" duration="8543000" />
+      <workItem from="1579362307151" duration="439000" />
+      <workItem from="1579362970565" duration="19000" />
+      <workItem from="1579450534787" duration="1436000" />
+      <workItem from="1579537843198" duration="602000" />
+      <workItem from="1579624134554" duration="1261000" />
+      <workItem from="1580221995285" duration="3833000" />
+      <workItem from="1580844798808" duration="318000" />
     </task>
     <servers />
   </component>
@@ -177,10 +183,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl" timestamp="1579343260389">
+    <state x="675" y="325" width="559" height="383" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581597503461">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579343260389" />
+    <state x="675" y="325" width="559" height="383" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581597503461" />
+    <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl" timestamp="1580845114797">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1580845114797" />
     <state width="1878" height="276" key="GridCell.Tab.0.bottom" timestamp="1579343263537">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -217,6 +227,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="708" y="182" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1579178454673" />
+    <state x="643" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1579362978493">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="643" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579362978493" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/blogengine$test.coverage" NAME="test Coverage Results" MODIFIED="1579275977670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
